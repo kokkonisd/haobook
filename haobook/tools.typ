@@ -198,6 +198,9 @@
   v(0.3cm)
   note(
     numbered: false,
+    // the chapter outline should not move
+    // if needed, the margin notes under it should shift instead
+    shift: false,
     {
       set outline.entry(fill: repeat(".", gap: 0.1cm))
       show outline.entry: x => {
