@@ -8,6 +8,7 @@
     (figure.where(kind: image), figure, "1-1"),
     (figure.where(kind: table), figure, "1-1"),
     (figure.where(kind: raw), figure, "1-1"),
+    (figure.where(kind: "algorithm"), figure, "1-1"),
     (math.equation, math.equation, "(1-1)"),
   ),
   unnumbered-label: "-",
