@@ -81,10 +81,7 @@
       heading(
         outlined: true,
         level: 1,
-        [
-          Contents
-          #v(-0.9cm)
-        ],
+        [Contents],
       )
     },
   )
