@@ -227,7 +227,7 @@
   }
 }
 
-#let body-styles(book: false, body) = {
+#let body-styles(book: false, reset-side-note-counter: true, body) = {
   let config = (
     outer: (far: 2.5cm, width: 5cm, sep: 0.6cm),
     book: book,
@@ -235,7 +235,11 @@
   marginalia.configure(..config)
 
   set page(..marginalia.page-setup(..config))
-  set page(footer: side-note-counter.update(0))
+  set page(footer: if reset-side-note-counter {
+      side-note-counter.update(0)
+  } else {
+      none
+  })
   set par(justify: true)
 
   // heading numbering
