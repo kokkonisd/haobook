@@ -132,15 +132,18 @@
   }
 
   if x.caption != none {
-    context {
+    // measure needs to be combined with layout,
+    // because measure assumes infinite space by default,
+    // thus messing up wideblock figures with codly (https://github.com/Dherse/codly) (among other things)
+    context layout(size => {
       show figure.caption: none
       x
       margin-note(
         bold-figure-caption(x.caption, x.location()),
-        dy: -measure(x.body).height - 0.65em,
+        dy: -measure(x.body, width: size.width).height - 0.65em,
       )
       v(-par.spacing)
-    }
+    })
   } else {
     x
   }
