@@ -215,7 +215,7 @@
           let s = selector(heading.where(level: 2)).after(here())
 
           let next-heading = query(heading.where(level: 1).after(here()))
-          if next-heading.len() > 1 {
+          if next-heading.len() > 0 {
             s = s.before(next-heading.at(0).location())
           }
           s
