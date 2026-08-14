@@ -70,6 +70,7 @@
     let in-text-loc = here()
 
     context super(side-note-counter.display())
+    sym.zwj
     note(
       dy: dy,
       numbered: false,
