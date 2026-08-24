@@ -203,7 +203,16 @@
               ),
               align: (right + bottom, center, center, center, left + bottom),
               pad(
-                text(26pt, x.body),
+                // Allow the heading to have a little more space than the text below,
+                // but not too much.
+                // Without this limitation, the text can expand leftward to the edge of the page.
+                box(
+                  width: page.width - book-func(book, _ => page.margin.right, _ => page.margin.outside, _ => 0) - 3em,
+                  {
+                      set par(justify: false)
+                      text(26pt, hyphenate: false, x.body)
+                  },
+                ),
                 bottom: bottom-pad,
               ),
               [],
