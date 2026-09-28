@@ -91,30 +91,39 @@
       // parts
       link(
         x.element.location(),
-        {
-          set text(1.3em)
-          v(0.4cm)
-          smallcaps(strong(x.body()))
-          h(1fr)
-          strong(x.page())
-          v(0cm)
-        },
+        x.indented(
+          {
+            v(0.4cm)
+          },
+          {
+            set text(1.3em)
+            smallcaps(strong(x.body()))
+            h(1fr)
+            strong(x.page())
+            v(0cm)
+          },
+          gap: 0pt,
+        ),
       )
     } else if x.level == 1 {
       // level 1 headings
+      v(0.2cm)
       link(
         x.element.location(),
-        {
-          strong({
+        x.indented(
+          {
             let prefix = x.prefix()
             if prefix != none {
-              box(width: indent, prefix)
+              box(width: indent, strong(prefix))
             }
-            x.body()
-          })
-          h(1fr)
-          strong(x.page())
-        },
+          },
+          {
+            strong(x.body())
+            h(1fr)
+            strong(x.page())
+          },
+          gap: 0pt,
+        ),
       )
       v(0cm)
     } else {
