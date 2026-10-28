@@ -187,7 +187,7 @@
             ),
             [],
             // page no
-            pad(str(here().page()), bottom: pad-b),
+            pad(counter(page).display(at: here()), bottom: pad-b),
           ))
         ),
       )
